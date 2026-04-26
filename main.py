@@ -1,7 +1,8 @@
 import streamlit as st
 from openai import OpenAI
 from database import init_db, save_entry, load_history
-
+# Access the secret
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 # 1. Setup & Configuration
 st.set_page_config(page_title="ImpactLog AI", page_icon="📈")
 db_conn = init_db()
